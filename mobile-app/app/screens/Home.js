@@ -81,7 +81,7 @@ const Home = ({ navigation }) => {
       <TouchableOpacity
         style={{
           flexDirection: "row",
-          marginTop: 30,
+          marginTop: 35,
           alignSelf: "center",
           height: 100,
         }}
@@ -89,8 +89,8 @@ const Home = ({ navigation }) => {
       >
         <View
           style={{
-            width: 115,
-            height: "100%",
+            width: 125,
+            height: "105%",
             alignItems: "center",
             justifyContent: "center",
             backgroundColor: "#2A8267",
@@ -105,7 +105,7 @@ const Home = ({ navigation }) => {
             }}
           ></ImageBackground>
 
-          <Text style={{ color: "#FFFFFF", fontSize: 15 }}>Tea</Text>
+          <Text style={{ color: "#FFFFFF", fontSize: 15, marginTop:5}}>Tea</Text>
         </View>
       </TouchableOpacity>
     );
@@ -116,31 +116,66 @@ const Home = ({ navigation }) => {
       <TouchableOpacity
         style={{
           flexDirection: "row",
-          marginTop: 30,
+          marginTop: 35,
           alignSelf: "center",
           height: 100,
         }}
-        onPress={() => navigation.navigate("Teas")}
+        onPress={() => navigation.navigate("Coffees")}
       >
         <View
           style={{
-            width: 115,
-            height: "100%",
+            width: 125,
+            height: "105%",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#2A8267",
+            backgroundColor: "#7A5142",
             borderRadius: 50,
           }}
         >
           <ImageBackground
-            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/tea.png")}
+            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/coffee.png")}
+            style={{
+              width: 60,
+              height: 60,
+            }}
+          ></ImageBackground>
+
+          <Text style={{ color: "#FFFFFF", fontSize: 15, marginTop:5 }}>Coffee</Text>
+        </View>
+      </TouchableOpacity>
+    );
+  }
+
+  function renderSmoothie(){
+    return(
+    <TouchableOpacity
+        style={{
+          flexDirection: "row",
+          marginTop: 35,
+          alignSelf: "center",
+          height: 100,
+        }}
+        onPress={() => navigation.navigate("Smoothies")}
+      >
+        <View
+          style={{
+            width: 125,
+            height: "105%",
+            alignItems: "center",
+            justifyContent: "center",
+            backgroundColor: "#7b435b",
+            borderRadius: 50,
+          }}
+        >
+          <ImageBackground
+            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/smoothie.png")}
             style={{
               width: 65,
               height: 65,
             }}
           ></ImageBackground>
 
-          <Text style={{ color: "#FFFFFF", fontSize: 15 }}>Tea</Text>
+          <Text style={{ color: "#FFFFFF", fontSize: 15, marginTop:5 }}>Smoothie</Text>
         </View>
       </TouchableOpacity>
     );
@@ -164,7 +199,7 @@ const Home = ({ navigation }) => {
         {renderAvailableRewards()}
         {renderTea()}
         {renderCoffee()}
-        {/* {renderSmoothie()} */}
+        {renderSmoothie()}
       </ScrollView>
     </View>
   );
