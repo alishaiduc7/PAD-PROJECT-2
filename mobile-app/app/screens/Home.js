@@ -30,7 +30,7 @@ const Home = ({ navigation }) => {
           }}
         >
           <ImageBackground
-            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/voucher.png")}
+            source={require("D:/An 3/Sem 2/PAD/Project 2/PAD-PROJECT-2/mobile-app/app/assets/icons/voucher.png")}
             style={{
               width: 65,
               height: 65,
@@ -98,7 +98,7 @@ const Home = ({ navigation }) => {
           }}
         >
           <ImageBackground
-            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/tea.png")}
+            source={require("D:/An 3/Sem 2/PAD/Project 2/PAD-PROJECT-2/mobile-app/app/assets/icons/tea.png")}
             style={{
               width: 65,
               height: 65,
@@ -133,7 +133,7 @@ const Home = ({ navigation }) => {
           }}
         >
           <ImageBackground
-            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/coffee.png")}
+            source={require("D:/An 3/Sem 2/PAD/Project 2/PAD-PROJECT-2/mobile-app/app/assets/icons/coffee.png")}
             style={{
               width: 60,
               height: 60,
@@ -168,7 +168,7 @@ const Home = ({ navigation }) => {
           }}
         >
           <ImageBackground
-            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/smoothie.png")}
+            source={require("D:/An 3/Sem 2/PAD/Project 2/PAD-PROJECT-2/mobile-app/app/assets/icons/smoothie.png")}
             style={{
               width: 65,
               height: 65,
