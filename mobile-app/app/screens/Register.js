@@ -17,7 +17,7 @@ export default function Register() {
  
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require("D:/An 3/Sem 2/PAD/Project 2/PAD-PROJECT-2/mobile-app/app/assets/adaptive-icon.png")} />
+      <Image style={styles.image} source={require("mobile-app/app/assets/adaptive-icon.png")} />
       
       <StatusBar style="auto" />
       <Text style={styles.loginView}>REGISTER</Text>
