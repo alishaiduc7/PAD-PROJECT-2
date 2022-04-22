@@ -4,7 +4,7 @@ import { SafeAreaView, View, StyleSheet, Text, Dimensions } from "react-native";
 const Header = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{ padding: 30 }}>
+      <View style={{ padding: 15 }}>
         <Text style={styles.labelStyle}>Andreea,</Text>
         <Text style={styles.labelStyle}>Welcome Back!</Text>
       </View>

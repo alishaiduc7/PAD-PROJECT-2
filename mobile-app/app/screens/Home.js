@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Text, StyleSheet, StatusBar, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { TouchableOpacity } from "react-native";
 import { ImageBackground } from "react-native";
 
 import Header from "../components/Header";
 
-const Home = ({ navigation }) => {
+const Home = ({navigation}) => {
   function renderAvailableRewards() {
     return (
       <TouchableOpacity
@@ -30,7 +30,7 @@ const Home = ({ navigation }) => {
           }}
         >
           <ImageBackground
-            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/voucher.png")}
+            source={require("mobile-app/app/assets/icons/voucher.png")}
             style={{
               width: 65,
               height: 65,
@@ -98,14 +98,16 @@ const Home = ({ navigation }) => {
           }}
         >
           <ImageBackground
-            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/tea.png")}
+            source={require("mobile-app/app/assets/icons/tea.png")}
             style={{
               width: 65,
               height: 65,
             }}
           ></ImageBackground>
 
-          <Text style={{ color: "#FFFFFF", fontSize: 15, marginTop:5}}>Tea</Text>
+          <Text style={{ color: "#FFFFFF", fontSize: 15, marginTop: 5 }}>
+            Tea
+          </Text>
         </View>
       </TouchableOpacity>
     );
@@ -133,22 +135,24 @@ const Home = ({ navigation }) => {
           }}
         >
           <ImageBackground
-            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/coffee.png")}
+            source={require("mobile-app/app/assets/icons/coffee.png")}
             style={{
               width: 60,
               height: 60,
             }}
           ></ImageBackground>
 
-          <Text style={{ color: "#FFFFFF", fontSize: 15, marginTop:5 }}>Coffee</Text>
+          <Text style={{ color: "#FFFFFF", fontSize: 15, marginTop: 5 }}>
+            Coffee
+          </Text>
         </View>
       </TouchableOpacity>
     );
   }
 
-  function renderSmoothie(){
-    return(
-    <TouchableOpacity
+  function renderSmoothie() {
+    return (
+      <TouchableOpacity
         style={{
           flexDirection: "row",
           marginTop: 35,
@@ -168,14 +172,16 @@ const Home = ({ navigation }) => {
           }}
         >
           <ImageBackground
-            source={require("C:/Users/user/Desktop/PAD-PROJECT-2/mobile-app/app/assets/icons/smoothie.png")}
+            source={require("mobile-app/app/assets/icons/smoothie.png")}
             style={{
               width: 65,
               height: 65,
             }}
           ></ImageBackground>
 
-          <Text style={{ color: "#FFFFFF", fontSize: 15, marginTop:5 }}>Smoothie</Text>
+          <Text style={{ color: "#FFFFFF", fontSize: 15, marginTop: 5 }}>
+            Smoothie
+          </Text>
         </View>
       </TouchableOpacity>
     );

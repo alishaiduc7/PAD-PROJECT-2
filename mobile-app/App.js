@@ -1,10 +1,14 @@
 import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
 
-import Home from "./app/screens/Home";
+import Tabs from "./app/navigation/tabs";
 
 export default function App() {
-  
-  return <Home></Home>;
+  return(
+    <NavigationContainer>
+      <Tabs></Tabs>
+    </NavigationContainer>
+  )
 }
 
 
