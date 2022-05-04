@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity,} from "react-native";
+
+import Register from "./Register";
  
 const Login = ({navigation}) =>{
   const [email, setEmail] = useState("");
@@ -48,7 +50,7 @@ const Login = ({navigation}) =>{
   }
   function renderMessageRegisterLink(){
     return(
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("Register")}>
             <Text style={styles.message_register_button}>Do you need an account? SIGN UP</Text>
         </TouchableOpacity>
     )
