@@ -10,7 +10,8 @@ import Menu from "../screens/Menu";
 import Order from "../screens/Order";
 import Favorites from "../screens/Favorites";
 import Profile from "../screens/Profile";
-
+import Login from "../screens/Login";
+import EmptyCart from "../screens/EmptyCart";
 const Tab = createBottomTabNavigator();
 
 const CustomTabBarButton = ({ children, onPress }) => {
@@ -94,7 +95,7 @@ const Tabs = () => {
 
       <Tab.Screen
         name="Order"
-        component={Order}
+        component={EmptyCart}
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
@@ -133,7 +134,7 @@ const Tabs = () => {
 
       <Tab.Screen
         name="Profile"
-        component={Profile}
+        component={Login}
         options={{
           tabBarIcon: ({ focused }) => (
             <Image

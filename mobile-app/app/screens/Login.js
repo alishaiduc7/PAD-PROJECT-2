@@ -74,7 +74,8 @@ const styles = StyleSheet.create({
   },
  
   image: {
-    marginBottom: 100,
+    marginTop: -20,
+    marginBottom: 75,
     width: 150,
     height: 150
   },
@@ -97,7 +98,6 @@ const styles = StyleSheet.create({
     width: "75%",
     height: 45,
     marginBottom: 20
-   // alignItems: "center",
   },
  
   TextInput: {
