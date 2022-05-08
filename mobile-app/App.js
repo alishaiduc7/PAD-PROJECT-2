@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Tabs from "./app/navigation/tabs";
 import Rewards from "./app/screens/Rewards";
 import Register from "./app/screens/Register";
+import Menu from "./app/screens/Menu";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,6 +24,10 @@ export default function App() {
         <Stack.Screen 
           name="Register"
           component={Register}
+        />
+        <Stack.Screen 
+          name="Menu"
+          component={Menu}
         />
       </Stack.Navigator>
     </NavigationContainer>

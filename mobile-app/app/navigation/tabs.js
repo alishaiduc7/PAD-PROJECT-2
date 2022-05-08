@@ -95,7 +95,7 @@ const Tabs = () => {
 
       <Tab.Screen
         name="Order"
-        component={EmptyCart}
+        component={Order}
         options={{
           tabBarIcon: ({ focused }) => (
             <Image
