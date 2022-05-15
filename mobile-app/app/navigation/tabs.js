@@ -12,6 +12,7 @@ import Favorites from "../screens/Favorites";
 import Profile from "../screens/Profile";
 import Login from "../screens/Login";
 import EmptyCart from "../screens/EmptyCart";
+import ProductDetails from "../screens/ProductDetails";
 const Tab = createBottomTabNavigator();
 
 const CustomTabBarButton = ({ children, onPress }) => {
@@ -54,7 +55,7 @@ const Tabs = () => {
           backgroundColor: "#424744",
           borderTopColor: "transparent",
           height: Platform.OS == "android" ? 60 : 80,
-        },
+        },Home
       }}
     >
       <Tab.Screen

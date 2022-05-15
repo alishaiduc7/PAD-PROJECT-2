@@ -6,6 +6,7 @@ import Tabs from "./app/navigation/tabs";
 import Rewards from "./app/screens/Rewards";
 import Register from "./app/screens/Register";
 import Menu from "./app/screens/Menu";
+import ProductDetails from "./app/screens/ProductDetails";
 
 const Stack = createNativeStackNavigator();
 
