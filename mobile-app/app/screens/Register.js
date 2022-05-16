@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from "react-native";
  
-export default function Register() {
+export default function Register({navigation}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -51,8 +51,8 @@ export default function Register() {
       </View>
  
  
-      <TouchableOpacity style={styles.loginBtn}>
-        <Text style={styles.loginText}>Create account</Text>
+      <TouchableOpacity style={styles.registerBtn} onPress={() => navigation.navigate("Login")}>
+        <Text style={styles.loginText}>Create account</Text> 
       </TouchableOpacity>
     </View>
   );
@@ -67,16 +67,17 @@ const styles = StyleSheet.create({
   },
  
   image: {
-    margin: 20,
-    width: 100,
-    height: 120,
+    marginTop: -100,
+    marginBottom: 30,
+    width: 175,
+    height: 175,
   },
 
   loginView: {
     width: "75%",
     height: 45,
     marginBottom: 20,
-    fontSize: 36
+    fontSize: 25
   },
 
   inputView: {
@@ -100,13 +101,13 @@ const styles = StyleSheet.create({
     marginBottom: 30,
   },
  
-  loginBtn: {
+  registerBtn: {
     width: "80%",
     borderRadius: 24,
     height: 50,
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 40,
+    marginBottom: 30,
     backgroundColor: "#F3D9DC",
   },
 });

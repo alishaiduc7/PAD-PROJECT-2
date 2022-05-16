@@ -51,16 +51,16 @@ const Order = ({ navigation }) => {
     return (
         <View style={{width:"100%",position:'absolute', bottom:0,marginBottom: 85}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={{marginLeft: 25}}>Subtotal</Text>
-            <Text style={{marginRight: 25}}>$61.70</Text>
+            <Text style={{marginLeft: 25, color: "#FFFFFF"}}>Subtotal</Text>
+            <Text style={{marginRight: 25, color: "#FFFFFF"}}>$61.70</Text>
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={{marginLeft: 25}}>Tax and Fees</Text>
-            <Text style={{marginRight: 25}}>$2.00</Text>
+            <Text style={{marginLeft: 25, color: "#FFFFFF"}}>Tax and Fees</Text>
+            <Text style={{marginRight: 25, color: "#FFFFFF"}}>$2.00</Text>
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={{marginLeft: 25}}>Delivery</Text>
-            <Text style={{marginRight: 25}}>$0.00</Text>
+            <Text style={{marginLeft: 25, color: "#FFFFFF"}}>Delivery</Text>
+            <Text style={{marginRight: 25, color: "#FFFFFF"}}>$0.00</Text>
           </View>
           <TouchableOpacity style={{width: '90%', alignSelf: 'center', marginTop: 15}}>
             <Button onPress={() => navigation.navigate("Home")} color="#254441" title="Continue  $63.70"/>
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     flex: 1,
     //alignItems: "center",
     //justifyContent: "center",
-    backgroundColor: "#5B6463",
+    backgroundColor: "#394f49",
   },
   address: {
     fontSize: 20,
@@ -92,7 +92,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontWeight: "bold",
     marginLeft: 25,
-    backgroundColor: "#FFFFFF"
   },
   address_small: {
     fontSize: 12,
@@ -126,7 +125,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginBottom:10,
     marginLeft: 25,
-    color: "#254441"
+    color: "#FFFFFF"
   },
   free_delivery: {
     width:18,
@@ -138,30 +137,30 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginTop: 10,
     borderWidth: 1,
-    borderRadius: 3,
+    borderRadius: 6,
     borderColor: '#FFFFFF',
     borderBottomWidth: 0,
-    shadowColor: '#FFFFFF',
+    // shadowColor: '#FFFFFF',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.9,
     shadowRadius: 3,
     elevation: 3,
-    backgroundColor: "#FFFFFF"
+    backgroundColor: "rgba(243, 217, 220, 0.8)"
   },
   deliveryAddress: {
     marginTop:10,
     marginLeft: 10,
     marginRight: 10,
     borderWidth: 1,
-    borderRadius: 3,
+    borderRadius: 6,
     borderBottomWidth: 0,
     borderColor: '#FFFFFF',
     borderBottomWidth: 0,
-    shadowColor: '#FFFFFF',
+    // shadowColor: '#FFFFFF',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.9,
     shadowRadius: 3,
     elevation: 3,
-    backgroundColor: "#FFFFFF"
+    backgroundColor: "rgba(243, 217, 220, 1)"
   }
 });

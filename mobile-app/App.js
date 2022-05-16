@@ -6,32 +6,32 @@ import Tabs from "./app/navigation/tabs";
 import Rewards from "./app/screens/Rewards";
 import Register from "./app/screens/Register";
 import Menu from "./app/screens/Menu";
+import ProductDetails from "./app/screens/ProductDetails";
 
 const Stack = createNativeStackNavigator();
 
 export default function App() {
-  return(
+  return (
     <NavigationContainer>
-      <Stack.Navigator headerMode={'none'} screenOptions={{headerShown: false}}>
+      <Stack.Navigator
+        headerMode={"none"}
+        screenOptions={{ headerShown: false }}
+      >
+        <Stack.Screen name="Tabs" component={Tabs} />
+        <Stack.Screen name="Rewards" component={Rewards} />
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Menu" component={Menu} />
+        <Stack.Screen name="ProductDetails" component={ProductDetails} />
         <Stack.Screen 
-          name="Tabs"
-          component={Tabs}
+          name="Profile"
+          component={Profile}
         />
-        <Stack.Screen 
-          name="Rewards"
-          component={Rewards}
+         <Stack.Screen 
+          name="Login"
+          component={Login}
         />
-        <Stack.Screen 
-          name="Register"
-          component={Register}
-        />
-        <Stack.Screen 
-          name="Menu"
-          component={Menu}
-        />
+
       </Stack.Navigator>
     </NavigationContainer>
-  )
+  );
 }
-
-

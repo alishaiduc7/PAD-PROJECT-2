@@ -1,72 +1,85 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity,} from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
 import Register from "./Register";
- 
-const Login = ({navigation}) =>{
+
+const Login = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  function renderLogo(){
+  function renderLogo() {
     return (
-        <Image style={styles.image} source={require("mobile-app/app/assets/adaptive-icon.png")} />
-    )
+      <Image
+        style={styles.image}
+        source={require("mobile-app/app/assets/adaptive-icon.png")}
+      />
+    );
   }
-  function renderLoginText(){
+  function renderLoginText() {
+    return <Text style={styles.loginText}>LOGIN</Text>;
+  }
+  function renderEmail() {
     return (
-        <Text style={styles.loginText}>LOGIN</Text>
-    )
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Email"
+          placeholderTextColor="#003F5C"
+          onChangeText={(email) => setEmail(email)}
+        />
+      </View>
+    );
   }
-  function renderEmail(){
+  function renderPassword() {
     return (
-        <View style={styles.inputView}>
-            <TextInput
-                style={styles.TextInput}
-                placeholder="Email"
-                placeholderTextColor="#003F5C"
-                onChangeText={(email) => setEmail(email)}
-            />
-        </View>
-    )
+      <View style={styles.inputView}>
+        <TextInput
+          style={styles.TextInput}
+          placeholder="Password"
+          placeholderTextColor="#003F5C"
+          secureTextEntry={true}
+          onChangeText={(password) => setPassword(password)}
+        />
+      </View>
+    );
   }
-  function renderPassword(){
+  function renderLoginButton() {
     return (
-        <View style={styles.inputView}>
-            <TextInput
-                style={styles.TextInput}
-                placeholder="Password"
-                placeholderTextColor="#003F5C"
-                secureTextEntry={true}
-                onChangeText={(password) => setPassword(password)}
-            />
-        </View>
-    )
+      <TouchableOpacity
+        style={styles.loginBtn}
+        onPress={() => navigation.navigate("Profile")}
+      >
+        <Text style={styles.loginButtonText}>Login</Text>
+      </TouchableOpacity>
+    );
   }
-  function renderLoginButton(){
+  function renderMessageRegisterLink() {
     return (
-        <TouchableOpacity style={styles.loginBtn}>
-            <Text style={styles.loginButtonText}>LOGIN</Text>
-        </TouchableOpacity>
-    )
-  }
-  function renderMessageRegisterLink(){
-    return(
-        <TouchableOpacity onPress={() => navigation.navigate("Register")}>
-            <Text style={styles.message_register_button}>Do you need an account? SIGN UP</Text>
-        </TouchableOpacity>
-    )
+      <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+        <Text style={styles.message_register_button}>
+          Do you need an account? SIGN UP
+        </Text>
+      </TouchableOpacity>
+    );
   }
   return (
     <View style={styles.container}>
-        {renderLogo()}
-        {renderLoginText()}
-        {renderEmail()}
-        {renderPassword()}
-        {renderLoginButton()}
-        {renderMessageRegisterLink()}
+      {renderLogo()}
+      {renderLoginText()}
+      {renderEmail()}
+      {renderPassword()}
+      {renderLoginButton()}
+      {renderMessageRegisterLink()}
     </View>
   );
-}
- 
+};
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -74,24 +87,24 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
- 
+
   image: {
-    marginTop: -20,
-    marginBottom: 75,
-    width: 150,
-    height: 150
+    marginTop: -100,
+    marginBottom: 30,
+    width: 175,
+    height: 175,
   },
 
   loginText: {
     width: "75%",
     height: 45,
     marginBottom: 20,
-    fontSize: 25
+    fontSize: 25,
   },
 
   loginButtonText: {
     textAlign: "center",
-    fontSize: 12
+    fontSize: 12,
   },
 
   inputView: {
@@ -99,21 +112,21 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     width: "75%",
     height: 45,
-    marginBottom: 20
+    marginBottom: 20,
   },
- 
+
   TextInput: {
     height: 50,
     flex: 1,
     padding: 10,
     marginLeft: 20,
   },
- 
+
   message_register_button: {
     height: 30,
     marginTop: 20,
   },
- 
+
   loginBtn: {
     width: "75%",
     borderRadius: 24,
