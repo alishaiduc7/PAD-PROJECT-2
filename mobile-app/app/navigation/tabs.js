@@ -55,8 +55,7 @@ const Tabs = () => {
           backgroundColor: "#424744",
           borderTopColor: "transparent",
           height: Platform.OS == "android" ? 60 : 80,
-        },
-        Home,
+        },Home
       }}
     >
       <Tab.Screen
@@ -153,7 +152,6 @@ const Tabs = () => {
       ></Tab.Screen>
     </Tab.Navigator>
   );
-  
 };
 
 export default Tabs;

@@ -6,7 +6,10 @@ import Tabs from "./app/navigation/tabs";
 import Rewards from "./app/screens/Rewards";
 import Register from "./app/screens/Register";
 import Menu from "./app/screens/Menu";
+import Login from "./app/screens/Login";
 import ProductDetails from "./app/screens/ProductDetails";
+import Profile from "./app/screens/Profile";
+import EditProfile from "./app/screens/EditProfile";
 
 const Stack = createNativeStackNavigator();
 
@@ -22,15 +25,9 @@ export default function App() {
         <Stack.Screen name="Register" component={Register} />
         <Stack.Screen name="Menu" component={Menu} />
         <Stack.Screen name="ProductDetails" component={ProductDetails} />
-        <Stack.Screen 
-          name="Profile"
-          component={Profile}
-        />
-         <Stack.Screen 
-          name="Login"
-          component={Login}
-        />
-
+        <Stack.Screen name="Profile" component={Profile} />
+        <Stack.Screen name="EditProfile" component={EditProfile} />
+        <Stack.Screen name="Login" component={Login} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -5,7 +5,7 @@ import { ImageBackground } from "react-native";
 
 import Header from "../components/Header";
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
   function renderAvailableRewards() {
     return (
       <TouchableOpacity
