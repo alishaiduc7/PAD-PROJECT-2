@@ -30,6 +30,10 @@ export default function App() {
           name="Menu"
           component={Menu}
         />
+        <Stack.Screen 
+          name="ProductDetails"
+          component={ProductDetails}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )
