@@ -1,0 +1,82 @@
+.container{
+    background-color: #43AA8B;
+    height: 100px;
+    padding: auto;
+    display: flex;
+    align-items: center;
+    /* to separate items */
+    justify-content: space-between; 
+    /* use this so the navigation won't move when scrolling */
+    position: sticky;
+    top: 0;
+}
+
+/* every item */
+.item{
+    flex: 1;
+}
+
+/* for a specific item */
+.item:nth-child(2){
+    flex: 3;
+    background-color: #DDAE7E;
+    border-radius: 50%;
+    padding: 0px;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+}
+
+/* the cart goes at the end of the screen */
+.item:last-child {
+    justify-content: flex-end;
+}
+
+.texts{
+    margin-left: 20px;
+    color: white;
+    font-weight: 500;
+}
+.text:first-child{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.list{
+    padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    
+}
+.listItem{
+   
+    margin-left: 150px;
+    /* margin: 20px; */
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 500;
+}
+
+.cart{
+    position: relative;
+    left: 70px;
+}
+
+.counter{
+    position: absolute;
+    font-weight: 500;
+    top: 15px;
+    right: 180px;
+    width: 20px;
+    height: 20px;
+    background-color: #DDAE7E;
+    border-radius: 50%;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo{
+    margin-left: 20px;
+}
