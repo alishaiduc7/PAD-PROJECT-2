@@ -9,6 +9,7 @@
     /* use this so the navigation won't move when scrolling */
     position: sticky;
     top: 0;
+    z-index: 999;
 }
 
 /* every item */
