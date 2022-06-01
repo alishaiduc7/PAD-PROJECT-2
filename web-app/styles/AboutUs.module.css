@@ -1,0 +1,15 @@
+.container{
+   padding: 50px;
+}
+
+.subtitle{
+    text-align: center;
+    color: rgb(133, 71, 20);
+}
+
+.p{
+    font-size: large;
+    text-indent: 50px;
+    text-align: justify; 
+    color: #3a3c3c;
+}

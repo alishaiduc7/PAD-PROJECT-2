@@ -1,6 +1,6 @@
 import styles from "../styles/ShoppingCart.module.css"
 import Image from "next/image";
-
+import Link from "next/link"
 const ShoppingCart = () => {
     return (
         <div className={styles.container}>
@@ -100,9 +100,9 @@ const ShoppingCart = () => {
                     <div className={styles.totalText}>
                         <b className={styles.totalTextTitle}>Total:</b>20lei
                     </div>
-
+                    <Link href='/orders/123'>
                     <button className={styles.button}>CHECKOUT</button>
-                </div>
+                </Link></div>
             </div>
         </div>
     );

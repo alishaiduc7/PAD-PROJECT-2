@@ -18,20 +18,24 @@ const NavigationBar = () => {
                 <div>
                 <Link href={`/`}> 
                 <li className={styles.listItem}>Home
-                <span></span><span></span><span></span><span></span>
+                
                 </li>
                 </Link>
                 </div>
                 <div>
                 <Link href={`/menu`}>
                 <li className={styles.listItem}>Menu
-                <span></span><span></span><span></span><span></span>
+                
+                </li>
+                </Link >
+               </div>
+               
+               <div>
+               <Link href={'/about'}>
+                <li className={styles.listItem}>About Us
                 </li>
                 </Link>
-               </div>
-                <li className={styles.listItem}>About Us
-                <span></span><span></span><span></span><span></span>
-                </li>
+                </div>
             </ul>
         </div>
         <div className={styles.item}>
