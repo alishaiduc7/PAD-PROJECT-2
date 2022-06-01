@@ -1,11 +1,31 @@
 import styles from "../styles/ShoppingCart.module.css"
 import Image from "next/image";
-import Link from "next/link"
+import Link from "next/link";
+import axios from "axios";
+import {useState} from "react";
+import {useRouter} from "next/router";
 import { useDispatch, useSelector } from "react-redux";
+import OrderDetail from "../components/OrderDetail";
+
 const ShoppingCart = () => {
 
     const dispatch = useDispatch();
     const cart = useSelector(state => state.cart);
+    const router = useRouter();
+    const [open, setOpen]= useState(false);
+
+    const createOrder = async(data) => {
+        try {
+            const res = await axios.post("http://localhost:3000/api/orders", data);
+            if(res.status === 201) {
+                dispatch(reset());
+                router.push(`/orders/${res.data._id}`);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.left}>
@@ -66,10 +86,14 @@ const ShoppingCart = () => {
                     <div className={styles.totalText}>
                         <b className={styles.totalTextTitle}>Total:</b>{cart.total} lei
                     </div>
-                    <Link href='/orders/123'>
-                    <button className={styles.button}>CHECKOUT</button>
-                </Link></div>
+                    {/* <Link href='/orders/123'> */}
+                    <button className={styles.button} onClick={() => setOpen(true)}>CHECKOUT</button>
+                {/* </Link> */}
+                </div>
             </div>
+            {open && (
+            <OrderDetail total={ShoppingCart.total} createOrder={createOrder}></OrderDetail>
+            )}
         </div>
     );
 };
