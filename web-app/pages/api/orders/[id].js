@@ -1,5 +1,5 @@
 import dbConnect from "../../../util/mongo.js"
-import Product from "../../../models/Product.js"
+import Order from "../../../models/Order.js"
 export default async function handler(req, res) {
     const {method, query: {id}} = req;
  
@@ -11,8 +11,8 @@ export default async function handler(req, res) {
          try{
              //fetching all coffee-shop data
              //await because it s an async process
-             const products = await Product.findById(id);
-             res.status(200).json(products);
+             const order = await Order.findById(id);
+             res.status(200).json(order);
  
          }catch(err) {
              res.status(500).json(err);
@@ -24,10 +24,10 @@ export default async function handler(req, res) {
             //taking the data from json postman body
          //    req.body
          //status 201 = added successfully
-         const product = await Product.findByIdAndUpdate(id,req.body,{
+         const order = await Order.findByIdAndUpdate(id,req.body,{
              new:true,
          });
-         res.status(201).json(product);
+         res.status(201).json(order);
  
  
         }catch(err)
@@ -40,7 +40,7 @@ export default async function handler(req, res) {
     if (method === "DELETE")
     {
         try{
-         await Product.findByIdAndDelete(id);
+         await Order.findByIdAndDelete(id);
          res.status(200).json("The product has been deleted!");
  
  
