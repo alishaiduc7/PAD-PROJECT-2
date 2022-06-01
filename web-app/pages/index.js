@@ -17,7 +17,6 @@ export default function Home({productList}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HomeOverview/>
-      <ProductList productList={productList} />
     </div>
   );
 }
