@@ -1,15 +1,49 @@
 .container{
-    background-color: #43AA8B;
+    margin: 0;
     height: 100px;
-    padding: auto;
     display: flex;
     align-items: center;
-    /* to separate items */
-    justify-content: space-between; 
-    /* use this so the navigation won't move when scrolling */
+    justify-content: center;
+    background-color: rgb(133, 71, 20);
     position: sticky;
     top: 0;
     z-index: 999;
+}
+
+.list{
+
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.listItem{
+   
+    --c: goldenrod;
+    color: var(--c);
+    font-size: 16px;
+    border: 0.3em solid var(--c);
+    border-radius: 0.5em;
+    width: 12em;
+    height: 3em;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    text-align: center;
+    line-height: 3em;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.5s;
+    margin: 1em;
+    margin-top: -20px;
+    margin-left: 65px;
+    cursor: pointer; 
+}
+
+.listItem:hover{
+    color: white;
 }
 
 /* every item */
@@ -20,8 +54,6 @@
 /* for a specific item */
 .item:nth-child(2){
     flex: 3;
-    background-color: #DDAE7E;
-    border-radius: 50%;
     padding: 0px;
     align-items: center;
     height: 50px;
@@ -36,46 +68,40 @@
 .texts{
     margin-left: 20px;
     color: white;
-    font-weight: 500;
+    font-weight: bold;
 }
 .text:first-child{
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
 }
 
-.list{
-    padding: 0;
-    display: flex;
-    align-items: center;
-    list-style: none;
-    
-}
-.listItem{
-   
-    margin-left: 150px;
-    /* margin: 20px; */
-    margin-bottom: 20px;
-    color: white;
-    font-weight: 500;
-}
+
+
 
 .cart{
     position: relative;
     left: 70px;
+    color: antiquewhite;
 }
 
 .counter{
     position: absolute;
-    font-weight: 500;
-    top: 15px;
-    right: 180px;
-    width: 20px;
-    height: 20px;
-    background-color: #DDAE7E;
+    font-weight: bold;
+    top:0px;
+    /* right: 230px; */
+    width: 25px;
+    height: 25px;
+    /* background-color: #DDAE7E; */
     border-radius: 50%;
-    padding: 2px;
+    padding: 17px;
     align-items: center;
     justify-content: center;
+    color: rgb(247, 203, 203);
+    cursor: pointer; 
+}
+
+.addtocart{
+    cursor: pointer;
 }
 
 .logo{
