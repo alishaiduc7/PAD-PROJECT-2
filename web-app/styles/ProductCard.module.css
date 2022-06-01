@@ -10,18 +10,20 @@
     background-color: rgba(221, 174, 126, 1);
     border-radius: 5%;
     margin: 12px;
+   
+    max-height: 450px;
 }
 
 .title{
     font-size: 18px;
     font-weight: bold;
-    color: #43AA8B;
+    color: #854c26;
 }
 
 .price{
     font-size: 18px;
     font-weight: bold;
-    color: #43AA8B;
+    color: #854c26;
 }
 
 .desc{
@@ -31,4 +33,6 @@
 
 .image{
     border-radius: 5%;
+    max-width: 250px;
+    max-height: 250px;
 }
