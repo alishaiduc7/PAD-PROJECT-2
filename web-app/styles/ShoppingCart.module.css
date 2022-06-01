@@ -2,7 +2,7 @@
     padding: 50px;
     position: relative;
     display: flex;
-    background-color:  #254441;
+    /* background-color:  #254441; */
 }
 
 .imageContainer {
@@ -48,6 +48,7 @@
     flex-direction: column;
     justify-content: space-between;
     color:#D7BEA8;
+    border-radius: 20px;
 }
 
 .totalTextTitle{
@@ -57,9 +58,12 @@
 
 .button{
     height: 30px;
-    color:#D7BEA8;
+    color:#B93052;
     font-weight: bold;
     cursor: pointer;
-    padding: 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #D7BEA8;
+    border: none;
 }
 
