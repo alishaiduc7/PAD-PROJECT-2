@@ -18,6 +18,7 @@ export default function Home({productList}) {
       </Head>
       <HomeOverview/>
       <ProductList productList={productList} />
+      
     </div>
   );
 }

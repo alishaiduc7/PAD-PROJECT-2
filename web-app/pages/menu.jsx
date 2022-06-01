@@ -1,9 +1,11 @@
 import ProductList from "../components/ProductList"
 
-const Menu = () => {
+const Menu = ({productList}) => {
     return (
-        <ProductList></ProductList>
-    )
+      
+        <ProductList productList={productList} />
+        
+    );
 }
 
 export default Menu
