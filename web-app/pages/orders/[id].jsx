@@ -26,18 +26,18 @@ const Order = ({order}) => {
                         </tr>
                         <tr>
                             <td>
-                                <span className={styles.id}>123445454342</span>
+                                <span className={styles.id}>{order._id}</span>
                             </td>
                             <td>
                                 <span className={styles.name}>
-                                    Jon Doe   
+                                    {order.customer}
                                 </span>    
                             </td> 
                             <td>
-                                <span className={styles.address}>Timisoara</span>    
+                                <span className={styles.address}>{order.address}</span>    
                             </td> 
                             <td>
-                                <span className={styles.total}>$36</span>
+                                <span className={styles.total}>{order.total}</span>
                             </td>
                         </tr>
                         </tbody>
@@ -80,13 +80,13 @@ const Order = ({order}) => {
                 <div className={styles.wrapper}>
                     <h2 className={styles.title}>CART TOTAL</h2>
                     <div className={styles.totalText}>
-                        <div className={styles.totalTextTitle}>Subtotal:</div>$79
+                        <div className={styles.totalTextTitle}>Subtotal:</div>${order.total}
                     </div>
                     <div className={styles.totalText}>
                         <div className={styles.totalTextTitle}>Discount:</div>$0
                     </div>
                     <div className={styles.totalText}>
-                        <div className={styles.totalTextTitle}>Total:</div>$79
+                        <div className={styles.totalTextTitle}>Total:</div>${order.total}
                     </div>
                     <button disabled className={styles.button}>PAID</button>
                 </div>
