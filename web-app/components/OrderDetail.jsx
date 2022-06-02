@@ -21,7 +21,7 @@ const OrderDetail = ({total,createOrder}) => {
     return (
         <div className={styles.container}>
             <div className={styles.wrapper}>
-                <h1 className={styles.title}>You will pay at delivery.</h1>
+                <h1 className={styles.title}>You will pay {total} lei at delivery.</h1>
                 <div className={styles.item}>
                     <label className={styles.label}>Name and Surname</label>
                     <input placeholder="Enter your full name" type="text" className={styles.input} onChange={(e) => setCustomer(e.target.value)}></input>  
