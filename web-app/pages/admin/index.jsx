@@ -2,10 +2,14 @@ import styles from "../../styles/Admin.module.css"
 import Image from "next/image";
 import axios from "axios";
 import {useState} from "react";
-const Index = ({orders,products}) => {
+import AddButton from "../../components/AddButton";
+import Add from "../../components/Add";
+const Index = ({orders,products, admin}) => {
     const [productsList, setProductsList] = useState(products);
     const [ordersList, setOrdersList] = useState(orders);
+    const [close, setClose] = useState(true);
     const status = ["preparing", "on the way", "delivered"];
+
     const handleDelete = async (id)=>{
         try{
             const res = await axios.delete("http://localhost:3000/api/products/"+id);
@@ -31,12 +35,14 @@ const Index = ({orders,products}) => {
         <div className={styles.container}>
             <div className={styles.item}>
                 <h1 className={styles.title}>Products</h1>
+                {admin && <AddButton setClose={setClose}/>}
                 <table className={styles.table}>
                     <tbody>
                         <tr className={styles.trTitle}>
                             <th>Image</th>
                             <th>Id</th>
                             <th>Title</th>
+                            <th>Description</th>
                             <th>Price</th>
                             <th>Action</th>
                         </tr>
@@ -49,6 +55,7 @@ const Index = ({orders,products}) => {
                                 </td>
                                 <td>{product._id}</td>
                                 <td>{product.title}</td>
+                                <td>{product.description}</td>
                                 <td>${product.prices[0]}</td>
                                 <td>
                                     <button className={styles.button}>Edit</button>
@@ -58,6 +65,7 @@ const Index = ({orders,products}) => {
                         </tbody>
                     ))}
                 </table>
+                {!close && <Add setClose={setClose}/>}
             </div>
             <div className={styles.item}>
             <h1 className={styles.title}>Orders</h1>
@@ -94,7 +102,9 @@ const Index = ({orders,products}) => {
 
 export const getServerSideProps = async (ctx)=>{
     const myCookie = ctx.req?.cookies || "";
+    let admin=true;
     if(myCookie.token !== process.env.TOKEN){
+        admin=false;
         return{
             redirect:{
                 destination:"/admin/login",
@@ -109,6 +119,7 @@ export const getServerSideProps = async (ctx)=>{
         props:{
             orders: orderRes.data,
             products: productRes.data,
+            admin
         },
     };
 };

@@ -1,10 +1,10 @@
 import dbConnect from "../../../util/mongo.js"
-import Product from "../../../models/Product.js"
+import Product from "../../../models/Product"
 
 //async because we don't know how much time it s gonna take each operation
 export default async function handler(req, res) {
-   const {method} = req;
-
+   const {method,cookies} = req;
+    const token = cookies.token;
    //import my database here
    dbConnect();
     //destructure the request 
@@ -22,7 +22,10 @@ export default async function handler(req, res) {
    }
    if (method === "POST")
    {
-       try{
+    if(!token || token !== process.env.TOKEN){
+        return res.status(401).json("Not authenticated!")
+    }
+    try{
            //taking the data from json postman body
         //    req.body
         //status 201 = added successfully
@@ -30,11 +33,11 @@ export default async function handler(req, res) {
         res.status(201).json(product);
 
 
-       }catch(err)
-       {
-           //server error
-           res.status(500).json(err);
-       }
+    }catch(err)
+    {
+        //server error
+        res.status(500).json(err);
+    }
 
    }
 }
