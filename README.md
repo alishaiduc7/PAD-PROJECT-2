@@ -4,6 +4,6 @@ Aplicația mobilă va facilita comenzile online a unei cafenele. Aceasta va con�
 
 
 Tool-urile de care ne vom folosi în realizarea proiectului vor fi: 
-- Frontend: Angular/React
-- Backend: Node.js
-- Baza de date: Sql
+- Frontend: React-native
+- Backend: Next.js
+- Baza de date: MongoDB Cloud
