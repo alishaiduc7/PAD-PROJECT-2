@@ -37,7 +37,7 @@ const Add = ({setClose}) => {
             const newProduct = {
                 title,
                 description,
-                image: "/web-app/public/assets/coffee.png",
+                image: url,
                 prices,
                 extras: extraOptions
               };
