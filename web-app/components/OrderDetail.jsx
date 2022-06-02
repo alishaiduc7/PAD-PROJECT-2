@@ -8,11 +8,19 @@ const OrderDetail = ({total,createOrder}) => {
     const [address, setAddress] = useState("");
   
     const handleClick= () => {
-        createOrder({customer, address,total});
+        createOrder(
+            {
+            customer, 
+            address,
+            total: total,
+            status: 0,
+            paymethod: 1
+            }
+        );
     }
     return (
         <div className={styles.container}>
-            <div clasName={styles.wrapper}>
+            <div className={styles.wrapper}>
                 <h1 className={styles.title}>You will pay 17 lei at deliver.</h1>
                 <div className={styles.item}>
                     <label className={styles.label}>Name and Surname</label>

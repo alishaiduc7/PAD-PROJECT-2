@@ -18,7 +18,7 @@ const ShoppingCart = () => {
         try {
             const res = await axios.post("http://localhost:3000/api/orders", data);
             if(res.status === 201) {
-                dispatch(reset());
+                //dispatch(reset());
                 router.push(`/orders/${res.data._id}`);
             }
         } catch (err) {
@@ -92,7 +92,7 @@ const ShoppingCart = () => {
                 </div>
             </div>
             {open && (
-            <OrderDetail total={ShoppingCart.total} createOrder={createOrder}></OrderDetail>
+            <OrderDetail total={cart.total} createOrder={createOrder}></OrderDetail>
             )}
         </div>
     );

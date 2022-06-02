@@ -22,11 +22,13 @@ const Index = ({orders,products, admin}) => {
         const item=ordersList.filter(order=>order._id==id)[0];
         const currentStatus=item.status;
         try{
-            const res=await axios.put("http://localhost:3000/api/orders/"+id,{status: currentStatus+1});
-            setOrdersList([
-                res.data,
-                ...ordersList.filter(order => order._id !== id),
-            ]);
+            if(currentStatus < 2){
+                const res=await axios.put("http://localhost:3000/api/orders/"+id,{status: currentStatus+1});
+                setOrdersList([
+                    res.data,
+                    ...ordersList.filter(order => order._id !== id),
+                ]);
+            }
         }catch(err){
             console.log(err);
         }
@@ -53,10 +55,10 @@ const Index = ({orders,products, admin}) => {
                                 <td>
                                     <Image src={product.image} width={50} height={50} alt="" objectFit="cover"></Image>
                                 </td>
-                                <td>{product._id}</td>
+                                <td>{product._id.slice(0,8)}...</td>
                                 <td>{product.title}</td>
                                 <td>{product.description}</td>
-                                <td>${product.prices[0]}</td>
+                                <td>{product.prices[0]} lei</td>
                                 <td>
                                     <button className={styles.button}>Edit</button>
                                     <button className={styles.button} onClick={()=>handleDelete(product._id)}>Delete</button>
@@ -83,10 +85,10 @@ const Index = ({orders,products, admin}) => {
                     {ordersList.map((order)=>(
                     <tbody key={order._id}>
                         <tr className={styles.trTitle}>
-                            <td>{order._id}</td>
+                            <td>{order._id.slice(0,8)}...</td>
                             <td>{order.customer}</td>
-                            <td>${order.total_price}</td>
-                            <td>{order.payment_method === 0 ? <span>cash</span> : <span>paid</span>}</td>
+                            <td>{order.total} lei</td>
+                            <td>{order.paymentmethod === 0 ? <span>cash</span> : <span>paid</span>}</td>
                             <td>{status[order.status]}</td>
                             <td>
                                 <button onClick={()=>handleStatus(order._id)}>Next Stage</button>
