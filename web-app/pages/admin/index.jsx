@@ -60,7 +60,7 @@ const Index = ({orders,products, admin}) => {
                                 <td>{product.description}</td>
                                 <td>{product.prices[0]} lei</td>
                                 <td>
-                                    <button className={styles.button}>Edit</button>
+                                    {/*<button className={styles.button}>Edit</button>*/}
                                     <button className={styles.button} onClick={()=>handleDelete(product._id)}>Delete</button>
                                 </td>
                             </tr>
