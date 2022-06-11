@@ -44,8 +44,24 @@ const Product = ({product}) => {
             setExtra(extra.filter(extra=>extra._id !== option._id));
         }
     };
-
+    const createCartAndAddProduct = async(data) => {
+        try {
+            const res = await axios.post("http://localhost:3000/api/cart", data);
+            if(res.status === 201) {
+                //dispatch(reset());
+                //router.push(`/orders/${res.data._id}`);
+                console.log("successful");
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    }
     const handleClick = () => {
+        createCartAndAddProduct(
+            {
+                products:[{...product,extra,price,quantity}]
+            }
+        );
         dispatch(addProduct({...product,extra,price,quantity}))
     }
 

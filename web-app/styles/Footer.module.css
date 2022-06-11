@@ -2,6 +2,7 @@
     /* height: calc(100vh - 100px); */
     background-color: #202020;
     /* display: flex; */
+    position: "fixed";
 }
 
 .item{
