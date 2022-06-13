@@ -85,7 +85,7 @@ const Home = ({ navigation }) => {
           alignSelf: "center",
           height: 100,
         }}
-        onPress={() => navigation.navigate("Teas")}
+        onPress={() => navigation.navigate("Menu")}
       >
         <View
           style={{
@@ -122,7 +122,7 @@ const Home = ({ navigation }) => {
           alignSelf: "center",
           height: 100,
         }}
-        onPress={() => navigation.navigate("Coffees")}
+        onPress={() => navigation.navigate("Menu")}
       >
         <View
           style={{
@@ -159,7 +159,7 @@ const Home = ({ navigation }) => {
           alignSelf: "center",
           height: 100,
         }}
-        onPress={() => navigation.navigate("Smoothies")}
+        onPress={() => navigation.navigate("Menu")}
       >
         <View
           style={{
