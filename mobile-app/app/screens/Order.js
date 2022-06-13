@@ -7,10 +7,10 @@ const Order = ({ navigation }) => {
   function renderDeliveryAddress(){
     return (
       <View style={styles.deliveryAddress}>
-        <Text style={styles.address}>Little Creatures - Club Street</Text>
+        <Text style={styles.address}>Popescu Ion</Text>
         <View style={{flexDirection: 'row'}}>
           <Image style={styles.location} source={require("mobile-app/app/assets/icons/location.png")} />
-          <Text style={styles.address_small}>856 Esta Underpass</Text>
+          <Text style={styles.address_small}>C22, Aleea Studentilor, Timisoara</Text>
           <Image style={styles.free_delivery} source={require("mobile-app/app/assets/icons/free-delivery.png")} />
         </View>
       </View>
@@ -21,24 +21,24 @@ const Order = ({ navigation }) => {
     return (
       <View >
         <View style={styles.orderItemsSection}>
-          <Text style={styles.order_item}>Special Gajananad Bhel</Text>
+          <Text style={styles.order_item}>Cappucino</Text>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.item_specifications}>Mixed Vegetables, Chicken Egg</Text>
-            <Text style={styles.item_price}>$17.20</Text>
+            <Text style={styles.item_specifications}>Extra topping, sugar</Text>
+            <Text style={styles.item_price}>$17.00</Text>
           </View>
         </View>
         <View style={styles.orderItemsSection}>
-          <Text style={styles.order_item}>Cold Bournvita</Text>
+          <Text style={styles.order_item}>Matcha Tea Latte</Text>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.item_specifications}>Extra Hot Mild</Text>
+            <Text style={styles.item_specifications}>Vegan milk</Text>
             <Text style={styles.item_price}>$15.00</Text>
           </View>
         </View>
         <View style={styles.orderItemsSection}>
-          <Text style={styles.order_item}>Butter Jam Maska Bun</Text>
+          <Text style={styles.order_item}>Dragon Drink</Text>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={styles.item_specifications}>SweetFire Chicken Breast</Text>
-            <Text style={styles.item_price}>$29.50</Text>
+            <Text style={styles.item_specifications}>Sugar</Text>
+            <Text style={styles.item_price}>$15.50</Text>
           </View>
         </View>
         <TouchableOpacity onPress={() => navigation.navigate("Menu")}>
@@ -51,19 +51,19 @@ const Order = ({ navigation }) => {
     return (
         <View style={{width:"100%",position:'absolute', bottom:0,marginBottom: 85}}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={{marginLeft: 25, color: "#FFFFFF"}}>Subtotal</Text>
-            <Text style={{marginRight: 25, color: "#FFFFFF"}}>$61.70</Text>
+            <Text style={{marginLeft: 25, color: "#fff1da"}}>Subtotal</Text>
+            <Text style={{marginRight: 25, color: "#fff1da"}}>$47.50</Text>
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={{marginLeft: 25, color: "#FFFFFF"}}>Tax and Fees</Text>
-            <Text style={{marginRight: 25, color: "#FFFFFF"}}>$2.00</Text>
+            <Text style={{marginLeft: 25, color: "#fff1da"}}>Tax and Fees</Text>
+            <Text style={{marginRight: 25, color: "#fff1da"}}>$2.00</Text>
           </View>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-            <Text style={{marginLeft: 25, color: "#FFFFFF"}}>Delivery</Text>
-            <Text style={{marginRight: 25, color: "#FFFFFF"}}>$0.00</Text>
+            <Text style={{marginLeft: 25, color: "#fff1da"}}>Delivery</Text>
+            <Text style={{marginRight: 25, color: "#fff1da"}}>$0.00</Text>
           </View>
           <TouchableOpacity style={{width: '90%', alignSelf: 'center', marginTop: 15}}>
-            <Button onPress={() => navigation.navigate("Home")} color="#254441" title="Continue  $63.70"/>
+            <Button onPress={() => navigation.navigate("Home")} color="#254441" title="Continue  $49.50"/>
           </TouchableOpacity>
         </View>
     )
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   address_small: {
     fontSize: 12,
-    color: "#808080",
+    color: "#fff1da",
     marginLeft: 8,
     marginBottom: 20
   },
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.9,
     shadowRadius: 3,
     elevation: 3,
-    backgroundColor: "rgba(243, 217, 220, 0.8)"
+    backgroundColor: "#D7BEA8"
   },
   deliveryAddress: {
     marginTop:10,
@@ -161,6 +161,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.9,
     shadowRadius: 3,
     elevation: 3,
-    backgroundColor: "rgba(243, 217, 220, 1)"
+    backgroundColor: "#a58e79"
   }
 });
