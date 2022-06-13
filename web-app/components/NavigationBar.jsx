@@ -48,7 +48,7 @@ const NavigationBar = () => {
                     <Image 
                          src="/assets/add-to-basket.png" alt="" height="45px" width="45px" className={styles.addtocart}>
                     </Image>
-                <div className={styles.counter}>{quantity}</div>
+                <div className={styles.counter}>{/*{quantity}*/}</div>
                 </div>
             </div>
         </Link>

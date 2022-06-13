@@ -1,3 +1,4 @@
+import ShoppingCart from "../pages/shoppingcart"
 import NavigationBar from "./NavigationBar"
 
 //children is used by app.js

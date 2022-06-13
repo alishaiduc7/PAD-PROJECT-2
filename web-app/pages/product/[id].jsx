@@ -59,7 +59,10 @@ const Product = ({product}) => {
     const handleClick = () => {
         createCartAndAddProduct(
             {
-                products:[{...product,extra,price,quantity}]
+                product:[{...product}],
+                extra,
+                price,
+                quantity
             }
         );
         dispatch(addProduct({...product,extra,price,quantity}))
