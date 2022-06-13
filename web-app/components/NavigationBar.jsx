@@ -2,10 +2,11 @@ import styles from "../styles/NavigationBar.module.css";
 import Image from "next/image";
 import Link from "next/link"
 import { useSelector } from "react-redux";
+import axios from "axios"
+import {useState} from "react";
 
 const NavigationBar = () => {
 
-    const quantity = useSelector(state => state.cart.quantity)
     return (
         <div className={styles.container}>
         <div className={styles.item}>
@@ -48,7 +49,7 @@ const NavigationBar = () => {
                     <Image 
                          src="/assets/add-to-basket.png" alt="" height="45px" width="45px" className={styles.addtocart}>
                     </Image>
-                <div className={styles.counter}>{/*{quantity}*/}</div>
+                <div className={styles.counter}>{}</div>
                 </div>
             </div>
         </Link>

@@ -118,9 +118,4 @@ export const getServerSideProps = async ()=>{
         },
     };
 };
-export const numberOfProducts = async () => {
-    const cartRes = await axios.get("http://localhost:3000/api/cart");
-    const total_products = cartRes.data.reduce((a,v) => a = a + 1, 0);
-    return total_products
-}
 export default ShoppingCart
