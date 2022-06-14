@@ -7,12 +7,66 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
+import client from "../api/client";
 
 import Register from "./Register";
 
+const isValidObjectField = (obj) => {
+  return Object.values(obj).every((value) => value.trim());
+};
+
+const updateError = (error, stateUpdater) => {
+  stateUpdater(error);
+  setTimeout(() => {
+    stateUpdater("");
+  }, 2500);
+};
+
+const isValidEmail = (value) => {
+  const regx = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+  return regx.test(value);
+};
+
 const Login = ({ navigation }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [userInfo, setUserInfo] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [error, setError] = useState("");
+  const { email, password } = userInfo;
+
+  const handleOnChangeText = (value, fieldName) => {
+    setUserInfo({ ...userInfo, [fieldName]: value });
+  };
+
+  const isValidForm = () => {
+    if (!isValidObjectField(userInfo))
+      return updateError("Required all fields!", setError);
+    if (!isValidEmail(email)) return updateError("Invalid email!", setError);
+    if (!password.trim() || password.length < 8)
+      return updateError("Password is less then 8 characters!", setError);
+
+    return true;
+  };
+
+  const submitForm = async () => {
+    if (isValidForm()) {
+      try {
+        const res = await client.post("/sign-in", { ...userInfo });
+
+        navigation.navigate("Home");
+
+        if (res.data.success) {
+          setUserInfo({ email: "", password: "" });
+        }
+        console.log(res.data);
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  };
+
   function renderLogo() {
     return (
       <Image
@@ -28,10 +82,11 @@ const Login = ({ navigation }) => {
     return (
       <View style={styles.inputView}>
         <TextInput
+          value={email}
+          onChangeText={(value) => handleOnChangeText(value, "email")}
           style={styles.TextInput}
           placeholder="Email"
           placeholderTextColor="#003F5C"
-          onChangeText={(email) => setEmail(email)}
         />
       </View>
     );
@@ -40,21 +95,19 @@ const Login = ({ navigation }) => {
     return (
       <View style={styles.inputView}>
         <TextInput
+          value={password}
+          onChangeText={(value) => handleOnChangeText(value, "password")}
           style={styles.TextInput}
           placeholder="Password"
           placeholderTextColor="#003F5C"
           secureTextEntry={true}
-          onChangeText={(password) => setPassword(password)}
         />
       </View>
     );
   }
   function renderLoginButton() {
     return (
-      <TouchableOpacity
-        style={styles.loginBtn}
-        onPress={() => navigation.navigate("Profile")}
-      >
+      <TouchableOpacity style={styles.loginBtn} onPress={submitForm}>
         <Text style={styles.loginButtonText}>Login</Text>
       </TouchableOpacity>
     );
@@ -72,6 +125,11 @@ const Login = ({ navigation }) => {
     <View style={styles.container}>
       {renderLogo()}
       {renderLoginText()}
+      {error ? (
+        <Text style={{ color: "white", fontSize: 16, textAlign: "center" }}>
+          {error}
+        </Text>
+      ) : null}
       {renderEmail()}
       {renderPassword()}
       {renderLoginButton()}
