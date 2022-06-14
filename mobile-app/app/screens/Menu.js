@@ -209,9 +209,11 @@ const Menu = ({ navigation }) => {
                   paddingBotton: 50
                 }}
                 data={menu}
-                keyExtractor={item => item.id}
+                keyExtractor={item => `${item.id}`}
+                showVerticalScrollIndicator={false}
                 renderItem={({item, index}) => {
                    return (
+
                       <TouchableWithoutFeedback
                          onPress={() => navigation.navigate("ProductDetails", { selectedItem: item }
                   )}
@@ -243,6 +245,7 @@ const Menu = ({ navigation }) => {
                       >   
 
                       <Image
+                          // source={item.image}
                           source={item.thumbnail}
                           resizeMode="contain"
                           style={{
@@ -276,6 +279,7 @@ const Menu = ({ navigation }) => {
                                 lineHeight: 25
                               }}
                           >
+                              {item.title}
                               {item.name}
                           </Text>
 

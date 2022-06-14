@@ -142,6 +142,7 @@ const ProductDetails = ({navigation, route, appTheme}) => {
                             onPress={() => setSelectedSize(250) }
                         >
                             <ImageBackground
+                                // source={require(item.image)}
                                 source={require("../assets/icons/coffee-cup.png")}
                                 style={{
                                     width: 90,
